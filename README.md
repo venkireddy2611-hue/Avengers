@@ -1,11 +1,4 @@
-# TaskFlow - Intelligent Task Management Platform
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://taskflow-demo.netlify.app)
-[![GitHub](https://img.shields.io/badge/github-repo-blue)](https://github.com/yourusername/taskflow)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ## 📋 Overview
 
@@ -26,18 +19,7 @@ TaskFlow is a modern, production-ready SaaS landing page built with vanilla HTML
 
 ## 🚀 Live Demo
 
-[View Live Demo →](https://taskflow-demo.netlify.app)
-
-## 📸 Screenshots
-
-### Light Mode
-![TaskFlow Light Mode](https://via.placeholder.com/1200x600/6366f1/ffffff?text=TaskFlow+Light+Mode)
-
-### Dark Mode
-![TaskFlow Dark Mode](https://via.placeholder.com/1200x600/1f2937/ffffff?text=TaskFlow+Dark+Mode)
-
-### Mobile View
-![TaskFlow Mobile View](https://via.placeholder.com/400x800/6366f1/ffffff?text=TaskFlow+Mobile+View)
+[View Live Demo →](https://taskflow-chi-ashen.vercel.app/)
 
 ## 🛠️ Tech Stack
 
@@ -49,6 +31,6 @@ TaskFlow is a modern, production-ready SaaS landing page built with vanilla HTML
 | **Font Awesome** | Icon library for professional icons |
 | **Google Fonts** | Inter typography for clean, modern look |
 | **JSONPlaceholder** | Mock API for blog posts |
-| **Unsplash** | High-quality images for blog posts |
+
 
 ## 📁 Project Structure
