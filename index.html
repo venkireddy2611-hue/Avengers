@@ -16,40 +16,29 @@
     
     <title>TaskFlow - Intelligent Task Management Platform</title>
     
-    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
-    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>">
 </head>
 <body>
-    <!-- Skip Link -->
     <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
 
-    <!-- ========== HEADER ========== -->
+    <!-- HEADER -->
     <header class="header" id="header" role="banner" aria-label="Main navigation">
         <nav class="nav-container" role="navigation" aria-label="Primary navigation">
             <div class="nav-brand">
                 <a href="#hero" aria-label="TaskFlow home">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#brandGrad)"/>
-                        <path d="M9 16L14 21L23 11" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        <defs>
-                            <linearGradient id="brandGrad" x1="0" y1="0" x2="32" y2="32">
-                                <stop offset="0%" stop-color="#6366f1"/>
-                                <stop offset="100%" stop-color="#8b5cf6"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
+                    <div class="brand-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="28" height="28" rx="8" fill="#6366f1"/>
+                            <path d="M9 16L14 21L23 11" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                     <span>TaskFlow</span>
                 </a>
             </div>
@@ -68,7 +57,7 @@
                     <li><a href="#contact" role="menuitem">Contact</a></li>
                 </ul>
                 <div class="nav-actions">
-                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
                         <i class="fas fa-moon" aria-hidden="true"></i>
                         <span class="theme-text">Dark</span>
                     </button>
@@ -78,10 +67,9 @@
         </nav>
     </header>
 
-    <!-- ========== MAIN ========== -->
     <main id="main-content">
 
-        <!-- ===== HERO ===== -->
+        <!-- HERO SECTION -->
         <section id="hero" class="hero" aria-labelledby="hero-title">
             <div class="container">
                 <div class="hero-grid">
@@ -129,63 +117,58 @@
                     <div class="hero-visual">
                         <div class="hero-image-wrapper">
                             <div class="hero-image-placeholder">
-                                <!-- Dashboard Preview SVG -->
-                                <svg class="hero-dashboard" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- Background -->
-                                    <rect width="500" height="400" rx="16" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="2"/>
-                                    
-                                    <!-- Header -->
-                                    <rect x="0" y="0" width="500" height="60" rx="16" fill="var(--color-primary)" opacity="0.1"/>
-                                    <rect x="20" y="20" width="120" height="20" rx="4" fill="var(--color-primary)" opacity="0.3"/>
-                                    <circle cx="460" cy="30" r="8" fill="var(--color-primary)" opacity="0.3"/>
-                                    <circle cx="440" cy="30" r="8" fill="var(--color-primary)" opacity="0.2"/>
-                                    <circle cx="420" cy="30" r="8" fill="var(--color-primary)" opacity="0.15"/>
-                                    
-                                    <!-- Sidebar -->
-                                    <rect x="0" y="60" width="80" height="340" fill="var(--color-bg-secondary)" opacity="0.5"/>
-                                    <rect x="20" y="90" width="40" height="8" rx="4" fill="var(--color-primary)" opacity="0.2"/>
-                                    <rect x="20" y="110" width="40" height="8" rx="4" fill="var(--color-primary)" opacity="0.15"/>
-                                    <rect x="20" y="130" width="40" height="8" rx="4" fill="var(--color-primary)" opacity="0.15"/>
-                                    <rect x="20" y="150" width="40" height="8" rx="4" fill="var(--color-primary)" opacity="0.15"/>
-                                    <rect x="20" y="170" width="40" height="8" rx="4" fill="var(--color-primary)" opacity="0.15"/>
-                                    
-                                    <!-- Main Content -->
-                                    <!-- Stats Cards -->
-                                    <rect x="100" y="80" width="120" height="70" rx="8" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1.5"/>
-                                    <rect x="115" y="95" width="40" height="8" rx="4" fill="var(--color-text-muted)" opacity="0.3"/>
-                                    <rect x="115" y="115" width="60" height="12" rx="4" fill="var(--color-primary)" opacity="0.4"/>
-                                    
-                                    <rect x="235" y="80" width="120" height="70" rx="8" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1.5"/>
-                                    <rect x="250" y="95" width="40" height="8" rx="4" fill="var(--color-text-muted)" opacity="0.3"/>
-                                    <rect x="250" y="115" width="60" height="12" rx="4" fill="var(--color-success)" opacity="0.4"/>
-                                    
-                                    <rect x="370" y="80" width="110" height="70" rx="8" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1.5"/>
-                                    <rect x="385" y="95" width="40" height="8" rx="4" fill="var(--color-text-muted)" opacity="0.3"/>
-                                    <rect x="385" y="115" width="60" height="12" rx="4" fill="var(--color-accent)" opacity="0.4"/>
-                                    
-                                    <!-- Chart -->
-                                    <rect x="100" y="170" width="380" height="160" rx="8" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1.5"/>
-                                    
-                                    <!-- Chart lines -->
-                                    <polyline points="120,280 170,240 220,260 270,200 320,220 370,170 420,190 460,150" 
-                                             fill="none" stroke="var(--color-primary)" stroke-width="3" stroke-linecap="round"/>
-                                    <polyline points="120,290 170,270 220,280 270,250 320,260 370,230 420,240 460,210" 
-                                             fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-                                    
-                                    <!-- Chart dots -->
-                                    <circle cx="120" cy="280" r="4" fill="var(--color-primary)"/>
-                                    <circle cx="270" cy="200" r="4" fill="var(--color-primary)"/>
-                                    <circle cx="370" cy="170" r="4" fill="var(--color-primary)"/>
-                                    <circle cx="460" cy="150" r="4" fill="var(--color-primary)"/>
-                                    
-                                    <!-- Chart labels -->
-                                    <text x="120" y="300" font-size="10" fill="var(--color-text-muted)" font-family="Inter">Mon</text>
-                                    <text x="220" y="300" font-size="10" fill="var(--color-text-muted)" font-family="Inter">Wed</text>
-                                    <text x="320" y="300" font-size="10" fill="var(--color-text-muted)" font-family="Inter">Fri</text>
-                                    <text x="420" y="300" font-size="10" fill="var(--color-text-muted)" font-family="Inter">Sun</text>
+                                <svg class="hero-dashboard" viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="10" y="10" width="480" height="400" rx="16" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+                                    <rect x="10" y="10" width="480" height="56" rx="16" fill="#6366f1" opacity="0.08"/>
+                                    <rect x="30" y="28" width="100" height="20" rx="4" fill="#6366f1" opacity="0.2"/>
+                                    <circle cx="450" cy="38" r="8" fill="#6366f1" opacity="0.2"/>
+                                    <circle cx="430" cy="38" r="8" fill="#6366f1" opacity="0.15"/>
+                                    <circle cx="410" cy="38" r="8" fill="#6366f1" opacity="0.1"/>
+                                    <rect x="10" y="66" width="64" height="344" fill="#f9fafb"/>
+                                    <rect x="26" y="90" width="32" height="6" rx="3" fill="#6366f1" opacity="0.25"/>
+                                    <rect x="26" y="108" width="32" height="6" rx="3" fill="#6366f1" opacity="0.15"/>
+                                    <rect x="26" y="126" width="32" height="6" rx="3" fill="#6366f1" opacity="0.15"/>
+                                    <rect x="26" y="144" width="32" height="6" rx="3" fill="#6366f1" opacity="0.15"/>
+                                    <rect x="26" y="162" width="32" height="6" rx="3" fill="#6366f1" opacity="0.15"/>
+                                    <rect x="26" y="180" width="20" height="6" rx="3" fill="#6366f1" opacity="0.1"/>
+                                    <rect x="90" y="80" width="110" height="64" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+                                    <rect x="105" y="92" width="32" height="6" rx="3" fill="#6b7280" opacity="0.3"/>
+                                    <rect x="105" y="106" width="48" height="10" rx="3" fill="#6366f1" opacity="0.4"/>
+                                    <circle cx="174" cy="99" r="12" fill="#6366f1" opacity="0.08"/>
+                                    <path d="M170 95L174 99L178 95" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round"/>
+                                    <rect x="212" y="80" width="110" height="64" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+                                    <rect x="227" y="92" width="32" height="6" rx="3" fill="#6b7280" opacity="0.3"/>
+                                    <rect x="227" y="106" width="48" height="10" rx="3" fill="#22c55e" opacity="0.4"/>
+                                    <circle cx="296" cy="99" r="12" fill="#22c55e" opacity="0.08"/>
+                                    <path d="M292 99L296 95L300 99" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round"/>
+                                    <rect x="334" y="80" width="136" height="64" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+                                    <rect x="349" y="92" width="32" height="6" rx="3" fill="#6b7280" opacity="0.3"/>
+                                    <rect x="349" y="106" width="48" height="10" rx="3" fill="#ec4899" opacity="0.4"/>
+                                    <circle cx="444" cy="99" r="12" fill="#ec4899" opacity="0.08"/>
+                                    <rect x="440" y="93" width="8" height="8" rx="2" fill="#ec4899"/>
+                                    <rect x="90" y="160" width="380" height="160" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+                                    <line x1="110" y1="200" x2="450" y2="200" stroke="#f3f4f6" stroke-width="1"/>
+                                    <line x1="110" y1="240" x2="450" y2="240" stroke="#f3f4f6" stroke-width="1"/>
+                                    <line x1="110" y1="280" x2="450" y2="280" stroke="#f3f4f6" stroke-width="1"/>
+                                    <polyline points="110,280 150,250 190,260 230,220 270,230 310,190 350,200 390,170 430,180 450,160" fill="none" stroke="#6366f1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <polyline points="110,290 150,270 190,275 230,250 270,255 310,230 350,235 390,210 430,215 450,200" fill="none" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+                                    <circle cx="110" cy="280" r="4" fill="#6366f1"/>
+                                    <circle cx="230" cy="220" r="4" fill="#6366f1"/>
+                                    <circle cx="310" cy="190" r="4" fill="#6366f1"/>
+                                    <circle cx="390" cy="170" r="4" fill="#6366f1"/>
+                                    <circle cx="450" cy="160" r="4" fill="#6366f1"/>
+                                    <text x="110" y="330" font-size="10" fill="#6b7280" font-family="Inter">Mon</text>
+                                    <text x="178" y="330" font-size="10" fill="#6b7280" font-family="Inter">Tue</text>
+                                    <text x="246" y="330" font-size="10" fill="#6b7280" font-family="Inter">Wed</text>
+                                    <text x="314" y="330" font-size="10" fill="#6b7280" font-family="Inter">Thu</text>
+                                    <text x="382" y="330" font-size="10" fill="#6b7280" font-family="Inter">Fri</text>
+                                    <text x="450" y="330" font-size="10" fill="#6b7280" font-family="Inter">Sat</text>
+                                    <circle cx="120" cy="345" r="4" fill="#6366f1"/>
+                                    <text x="128" y="348" font-size="9" fill="#6b7280" font-family="Inter">Tasks</text>
+                                    <circle cx="180" cy="345" r="4" fill="#ec4899" opacity="0.6"/>
+                                    <text x="188" y="348" font-size="9" fill="#6b7280" font-family="Inter">Projects</text>
                                 </svg>
 
-                                <!-- Floating Cards -->
                                 <div class="floating-card card-1">
                                     <i class="fas fa-check-circle" aria-hidden="true"></i>
                                     <span>Task completed</span>
@@ -210,7 +193,7 @@
             </div>
         </section>
 
-        <!-- ===== FEATURES ===== -->
+        <!-- FEATURES SECTION -->
         <section id="features" class="features" aria-labelledby="features-title">
             <div class="container">
                 <div class="section-header">
@@ -226,7 +209,7 @@
             </div>
         </section>
 
-        <!-- ===== PRICING ===== -->
+        <!-- PRICING SECTION -->
         <section id="pricing" class="pricing" aria-labelledby="pricing-title">
             <div class="container">
                 <div class="section-header">
@@ -237,7 +220,6 @@
                     </p>
                 </div>
                 <div class="pricing-grid">
-                    <!-- Starter -->
                     <div class="pricing-card" role="article" aria-label="Starter plan">
                         <div class="pricing-header">
                             <h3>Starter</h3>
@@ -258,7 +240,6 @@
                         <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
                     </div>
 
-                    <!-- Professional -->
                     <div class="pricing-card popular" role="article" aria-label="Professional plan, most popular">
                         <div class="pricing-badge">Most Popular</div>
                         <div class="pricing-header">
@@ -280,7 +261,6 @@
                         <a href="#contact" class="btn btn-primary btn-block">Start Free Trial</a>
                     </div>
 
-                    <!-- Enterprise -->
                     <div class="pricing-card" role="article" aria-label="Enterprise plan">
                         <div class="pricing-header">
                             <h3>Enterprise</h3>
@@ -304,7 +284,7 @@
             </div>
         </section>
 
-        <!-- ===== BLOG ===== -->
+        <!-- BLOG SECTION WITH IMAGES -->
         <section id="blog" class="blog" aria-labelledby="blog-title">
             <div class="container">
                 <div class="section-header">
@@ -315,12 +295,12 @@
                     </p>
                 </div>
                 <div class="blog-grid" id="blogGrid" role="list" aria-label="Blog posts">
-                    <!-- Loaded dynamically -->
+                    <!-- Posts will be loaded here with images -->
                 </div>
             </div>
         </section>
 
-        <!-- ===== CONTACT ===== -->
+        <!-- CONTACT SECTION -->
         <section id="contact" class="contact" aria-labelledby="contact-title">
             <div class="container">
                 <div class="section-header">
@@ -380,21 +360,15 @@
 
     </main>
 
-    <!-- ========== FOOTER ========== -->
+    <!-- FOOTER -->
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#hero" class="footer-logo">
                         <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#footerGrad)"/>
+                            <rect x="2" y="2" width="28" height="28" rx="8" fill="#6366f1"/>
                             <path d="M9 16L14 21L23 11" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            <defs>
-                                <linearGradient id="footerGrad" x1="0" y1="0" x2="32" y2="32">
-                                    <stop offset="0%" stop-color="#6366f1"/>
-                                    <stop offset="100%" stop-color="#8b5cf6"/>
-                                </linearGradient>
-                            </defs>
                         </svg>
                         <span>TaskFlow</span>
                     </a>
@@ -445,8 +419,7 @@
         </div>
     </footer>
 
-    <!-- Scroll to Top -->
-    <button id="scrollTop" class="scroll-top" aria-label="Scroll to top" title="Scroll to top">
+    <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">
         <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
 

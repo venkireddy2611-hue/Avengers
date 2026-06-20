@@ -1,33 +1,23 @@
+/**
+ * TaskFlow - Main Application
+ * Version: 1.0.0
+ */
 
 'use strict';
 
-// ============================================
-// Application Module
-// ============================================
 const App = (() => {
     'use strict';
 
-    // ============================================
     // DOM Cache
-    // ============================================
     const DOM = {
-        // Navigation
         header: document.getElementById('header'),
         navToggle: document.getElementById('navToggle'),
         navMenu: document.getElementById('navMenu'),
         navLinks: document.querySelectorAll('.nav-links a'),
-        
-        // Theme
         themeToggle: document.getElementById('themeToggle'),
-        
-        // Scroll
         scrollTop: document.getElementById('scrollTop'),
-        
-        // Sections
         featuresGrid: document.getElementById('featuresGrid'),
         blogGrid: document.getElementById('blogGrid'),
-        
-        // Form
         contactForm: document.getElementById('contactForm'),
         formSuccess: document.getElementById('formSuccess'),
         submitBtn: document.getElementById('submitBtn'),
@@ -41,9 +31,7 @@ const App = (() => {
         messageError: document.getElementById('messageError'),
     };
 
-    // ============================================
     // State
-    // ============================================
     const state = {
         isDarkMode: localStorage.getItem('theme') === 'dark',
         isMenuOpen: false,
@@ -79,12 +67,19 @@ const App = (() => {
                 title: 'Enterprise Security',
                 description: 'Bank-grade encryption and security features to protect your sensitive business data.'
             }
+        ],
+        // Blog images from Unsplash
+        blogImages: [
+            'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=250&fit=crop&crop=center',
+            'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=250&fit=crop&crop=center',
+            'https://images.unsplash.com/photo-1488590528505-98d2b853aba4?w=400&h=250&fit=crop&crop=center',
+            'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=250&fit=crop&crop=center',
+            'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop&crop=center',
+            'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop&crop=center'
         ]
     };
 
-    // ============================================
     // Utilities
-    // ============================================
     const utils = {
         debounce: (fn, delay = 250) => {
             let timeoutId;
@@ -112,27 +107,33 @@ const App = (() => {
                 day: 'numeric',
                 year: 'numeric'
             }).format(date);
+        },
+
+        getBlogImage: (index) => {
+            const images = state.blogImages;
+            return images[index % images.length];
         }
     };
 
-    // ============================================
     // Theme Module
-    // ============================================
     const Theme = {
         init() {
-            if (state.isDarkMode) {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                state.isDarkMode = true;
                 document.documentElement.setAttribute('data-theme', 'dark');
                 this.updateUI(true);
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                this.updateUI(false);
             }
         },
 
         toggle() {
             state.isDarkMode = !state.isDarkMode;
-            document.documentElement.setAttribute(
-                'data-theme',
-                state.isDarkMode ? 'dark' : 'light'
-            );
-            localStorage.setItem('theme', state.isDarkMode ? 'dark' : 'light');
+            const theme = state.isDarkMode ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
             this.updateUI(state.isDarkMode);
             this.updateMetaTheme();
         },
@@ -141,8 +142,13 @@ const App = (() => {
             const icon = DOM.themeToggle?.querySelector('i');
             const text = DOM.themeToggle?.querySelector('.theme-text');
             if (icon && text) {
-                icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-                text.textContent = isDark ? 'Light' : 'Dark';
+                if (isDark) {
+                    icon.className = 'fas fa-sun';
+                    text.textContent = 'Light';
+                } else {
+                    icon.className = 'fas fa-moon';
+                    text.textContent = 'Dark';
+                }
             }
         },
 
@@ -154,15 +160,13 @@ const App = (() => {
         }
     };
 
-    // ============================================
     // Navigation Module
-    // ============================================
     const Navigation = {
         init() {
-            // Mobile menu toggle
-            DOM.navToggle?.addEventListener('click', this.toggleMenu.bind(this));
+            if (DOM.navToggle) {
+                DOM.navToggle.addEventListener('click', this.toggleMenu.bind(this));
+            }
 
-            // Close menu on link click
             DOM.navLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     if (window.innerWidth <= 768) {
@@ -171,7 +175,6 @@ const App = (() => {
                 });
             });
 
-            // Close menu on outside click
             document.addEventListener('click', (e) => {
                 const isClickInside = DOM.navMenu?.contains(e.target) || 
                                      DOM.navToggle?.contains(e.target);
@@ -180,7 +183,6 @@ const App = (() => {
                 }
             });
 
-            // Close menu on Escape
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && state.isMenuOpen) {
                     this.closeMenu();
@@ -188,11 +190,8 @@ const App = (() => {
                 }
             });
 
-            // Scroll effects
             window.addEventListener('scroll', utils.debounce(this.handleScroll.bind(this), 100));
             this.handleScroll();
-
-            // Active link update
             window.addEventListener('scroll', utils.debounce(this.updateActiveLink.bind(this), 150));
         },
 
@@ -239,14 +238,12 @@ const App = (() => {
         }
     };
 
-    // ============================================
     // Features Module
-    // ============================================
     const Features = {
         render() {
             if (!DOM.featuresGrid) return;
 
-            const html = state.features.map((feature, index) => `
+            const html = state.features.map((feature) => `
                 <article class="feature-card" role="article" aria-label="${feature.title}">
                     <div class="feature-icon" aria-hidden="true">
                         <i class="fas ${feature.icon}"></i>
@@ -260,22 +257,17 @@ const App = (() => {
         }
     };
 
-    // ============================================
-    // Blog Module (API Integration)
-    // ============================================
+    // Blog Module with Images
     const Blog = {
         async loadPosts() {
             if (!DOM.blogGrid) return;
-
             this.showLoading();
 
             try {
                 const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=6');
-                
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                 }
-
                 const posts = await response.json();
                 this.renderPosts(posts);
             } catch (error) {
@@ -308,17 +300,42 @@ const App = (() => {
         },
 
         renderPosts(posts) {
-            const html = posts.map(post => `
-                <article class="blog-card" role="listitem">
-                    <h3>${utils.escapeHTML(utils.truncateText(post.title, 60))}</h3>
-                    <p>${utils.escapeHTML(utils.truncateText(post.body, 150))}</p>
-                    <div class="blog-meta">
-                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                        ${utils.formatDate(new Date().toISOString())}
-                    </div>
-                </article>
-            `).join('');
-
+            const html = posts.map((post, index) => {
+                const imageUrl = utils.getBlogImage(index);
+                return `
+                    <article class="blog-card" role="listitem">
+                        <div class="blog-image">
+                            <img 
+                                src="${imageUrl}" 
+                                alt="${utils.escapeHTML(utils.truncateText(post.title, 60))}"
+                                loading="lazy"
+                                width="400"
+                                height="250"
+                                onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22><rect width=%22400%22 height=%22250%22 fill=%22%236366f1%22 opacity=%220.1%22/><text x=%22200%22 y=%22125%22 text-anchor=%22middle%22 font-family=%22Inter%22 font-size=%2220%22 fill=%22%23636f1%22>📸</text></svg>'"
+                            />
+                            <span class="blog-category">Productivity</span>
+                        </div>
+                        <div class="blog-content">
+                            <h3>${utils.escapeHTML(utils.truncateText(post.title, 60))}</h3>
+                            <p>${utils.escapeHTML(utils.truncateText(post.body, 120))}</p>
+                            <div class="blog-meta">
+                                <span>
+                                    <i class="fas fa-user-circle" aria-hidden="true"></i>
+                                    Admin
+                                </span>
+                                <span>
+                                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                    ${utils.formatDate(new Date().toISOString())}
+                                </span>
+                            </div>
+                            <a href="#" class="blog-read-more">
+                                Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+            
             DOM.blogGrid.innerHTML = html;
         },
 
@@ -327,33 +344,27 @@ const App = (() => {
         }
     };
 
-    // ============================================
     // Form Module
-    // ============================================
     const Form = {
         init() {
             if (!DOM.contactForm) return;
 
-            // Real-time validation on blur
             DOM.name?.addEventListener('blur', () => this.validateField('name'));
             DOM.email?.addEventListener('blur', () => this.validateField('email'));
             DOM.subject?.addEventListener('blur', () => this.validateField('subject'));
             DOM.message?.addEventListener('blur', () => this.validateField('message'));
 
-            // Clear errors on input
             DOM.name?.addEventListener('input', () => this.clearError('name'));
             DOM.email?.addEventListener('input', () => this.clearError('email'));
             DOM.subject?.addEventListener('input', () => this.clearError('subject'));
             DOM.message?.addEventListener('input', () => this.clearError('message'));
 
-            // Form submission
             DOM.contactForm.addEventListener('submit', this.handleSubmit.bind(this));
         },
 
         validateField(fieldName) {
             const field = DOM[fieldName];
             const errorEl = DOM[`${fieldName}Error`];
-            
             if (!field || !errorEl) return true;
 
             const value = field.value.trim();
@@ -450,7 +461,6 @@ const App = (() => {
                 return;
             }
 
-            // Simulate submission
             const btn = DOM.submitBtn;
             if (!btn) return;
 
@@ -480,9 +490,7 @@ const App = (() => {
         }
     };
 
-    // ============================================
     // Scroll to Top Module
-    // ============================================
     const ScrollTop = {
         init() {
             if (!DOM.scrollTop) return;
@@ -500,9 +508,7 @@ const App = (() => {
         }
     };
 
-    // ============================================
-    // Observer Module (Intersection Observer)
-    // ============================================
+    // Observer Module
     const Observer = {
         init() {
             if (!('IntersectionObserver' in window)) return;
@@ -523,14 +529,19 @@ const App = (() => {
         }
     };
 
-    // ============================================
+    // Theme Toggle Event Listener
+    function setupThemeToggle() {
+        if (DOM.themeToggle) {
+            DOM.themeToggle.addEventListener('click', () => {
+                Theme.toggle();
+            });
+        }
+    }
+
     // Initialization
-    // ============================================
     function init() {
-        // Theme must be first
         Theme.init();
-        
-        // Then everything else
+        setupThemeToggle();
         Navigation.init();
         Features.render();
         Blog.loadPosts();
@@ -541,11 +552,9 @@ const App = (() => {
         console.log('✅ TaskFlow initialized successfully');
         console.log(`📊 ${state.features.length} features loaded`);
         console.log(`🎨 Theme: ${state.isDarkMode ? 'Dark' : 'Light'}`);
+        console.log('💡 Click the moon/sun icon to toggle dark mode');
     }
 
-    // ============================================
-    // Public API
-    // ============================================
     return {
         init,
         retryLoadPosts: () => Blog.retry(),
@@ -554,14 +563,10 @@ const App = (() => {
 
 })();
 
-// ============================================
 // DOM Ready
-// ============================================
 document.addEventListener('DOMContentLoaded', () => {
     App.init();
 });
 
-// ============================================
 // Expose for inline handlers
-// ============================================
 window.App = App;
