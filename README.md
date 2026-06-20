@@ -33,4 +33,3 @@ TaskFlow is a modern, production-ready SaaS landing page built with vanilla HTML
 | **JSONPlaceholder** | Mock API for blog posts |
 
 
-## 📁 Project Structure
