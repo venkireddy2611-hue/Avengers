@@ -40,7 +40,16 @@
         <nav class="nav-container" role="navigation" aria-label="Primary navigation">
             <div class="nav-brand">
                 <a href="#hero" aria-label="TaskFlow home">
-                    <i class="fas fa-tasks" aria-hidden="true"></i>
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#brandGrad)"/>
+                        <path d="M9 16L14 21L23 11" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="brandGrad" x1="0" y1="0" x2="32" y2="32">
+                                <stop offset="0%" stop-color="#6366f1"/>
+                                <stop offset="100%" stop-color="#8b5cf6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
                     <span>TaskFlow</span>
                 </a>
             </div>
@@ -120,6 +129,63 @@
                     <div class="hero-visual">
                         <div class="hero-image-wrapper">
                             <div class="hero-image-placeholder">
+                                <!-- Dashboard Preview SVG -->
+                                <svg class="hero-dashboard" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Background -->
+                                    <rect width="500" height="400" rx="16" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="2"/>
+                                    
+                                    <!-- Header -->
+                                    <rect x="0" y="0" width="500" height="60" rx="16" fill="var(--color-primary)" opacity="0.1"/>
+                                    <rect x="20" y="20" width="120" height="20" rx="4" fill="var(--color-primary)" opacity="0.3"/>
+                                    <circle cx="460" cy="30" r="8" fill="var(--color-primary)" opacity="0.3"/>
+                                    <circle cx="440" cy="30" r="8" fill="var(--color-primary)" opacity="0.2"/>
+                                    <circle cx="420" cy="30" r="8" fill="var(--color-primary)" opacity="0.15"/>
+                                    
+                                    <!-- Sidebar -->
+                                    <rect x="0" y="60" width="80" height="340" fill="var(--color-bg-secondary)" opacity="0.5"/>
+                                    <rect x="20" y="90" width="40" height="8" rx="4" fill="var(--color-primary)" opacity="0.2"/>
+                                    <rect x="20" y="110" width="40" height="8" rx="4" fill="var(--color-primary)" opacity="0.15"/>
+                                    <rect x="20" y="130" width="40" height="8" rx="4" fill="var(--color-primary)" opacity="0.15"/>
+                                    <rect x="20" y="150" width="40" height="8" rx="4" fill="var(--color-primary)" opacity="0.15"/>
+                                    <rect x="20" y="170" width="40" height="8" rx="4" fill="var(--color-primary)" opacity="0.15"/>
+                                    
+                                    <!-- Main Content -->
+                                    <!-- Stats Cards -->
+                                    <rect x="100" y="80" width="120" height="70" rx="8" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1.5"/>
+                                    <rect x="115" y="95" width="40" height="8" rx="4" fill="var(--color-text-muted)" opacity="0.3"/>
+                                    <rect x="115" y="115" width="60" height="12" rx="4" fill="var(--color-primary)" opacity="0.4"/>
+                                    
+                                    <rect x="235" y="80" width="120" height="70" rx="8" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1.5"/>
+                                    <rect x="250" y="95" width="40" height="8" rx="4" fill="var(--color-text-muted)" opacity="0.3"/>
+                                    <rect x="250" y="115" width="60" height="12" rx="4" fill="var(--color-success)" opacity="0.4"/>
+                                    
+                                    <rect x="370" y="80" width="110" height="70" rx="8" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1.5"/>
+                                    <rect x="385" y="95" width="40" height="8" rx="4" fill="var(--color-text-muted)" opacity="0.3"/>
+                                    <rect x="385" y="115" width="60" height="12" rx="4" fill="var(--color-accent)" opacity="0.4"/>
+                                    
+                                    <!-- Chart -->
+                                    <rect x="100" y="170" width="380" height="160" rx="8" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1.5"/>
+                                    
+                                    <!-- Chart lines -->
+                                    <polyline points="120,280 170,240 220,260 270,200 320,220 370,170 420,190 460,150" 
+                                             fill="none" stroke="var(--color-primary)" stroke-width="3" stroke-linecap="round"/>
+                                    <polyline points="120,290 170,270 220,280 270,250 320,260 370,230 420,240 460,210" 
+                                             fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                                    
+                                    <!-- Chart dots -->
+                                    <circle cx="120" cy="280" r="4" fill="var(--color-primary)"/>
+                                    <circle cx="270" cy="200" r="4" fill="var(--color-primary)"/>
+                                    <circle cx="370" cy="170" r="4" fill="var(--color-primary)"/>
+                                    <circle cx="460" cy="150" r="4" fill="var(--color-primary)"/>
+                                    
+                                    <!-- Chart labels -->
+                                    <text x="120" y="300" font-size="10" fill="var(--color-text-muted)" font-family="Inter">Mon</text>
+                                    <text x="220" y="300" font-size="10" fill="var(--color-text-muted)" font-family="Inter">Wed</text>
+                                    <text x="320" y="300" font-size="10" fill="var(--color-text-muted)" font-family="Inter">Fri</text>
+                                    <text x="420" y="300" font-size="10" fill="var(--color-text-muted)" font-family="Inter">Sun</text>
+                                </svg>
+
+                                <!-- Floating Cards -->
                                 <div class="floating-card card-1">
                                     <i class="fas fa-check-circle" aria-hidden="true"></i>
                                     <span>Task completed</span>
@@ -132,25 +198,6 @@
                                     <i class="fas fa-chart-line" aria-hidden="true"></i>
                                     <span>Progress 85%</span>
                                 </div>
-                                <svg class="hero-graphic" viewBox="0 0 400 400" aria-hidden="true">
-                                    <circle cx="200" cy="200" r="150" fill="none" stroke="url(#grad1)" stroke-width="3" opacity="0.3"/>
-                                    <circle cx="200" cy="200" r="100" fill="none" stroke="url(#grad2)" stroke-width="3" opacity="0.5"/>
-                                    <circle cx="200" cy="200" r="50" fill="url(#grad3)" opacity="0.3"/>
-                                    <defs>
-                                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
-                                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                        </linearGradient>
-                                        <linearGradient id="grad2" x1="0%" y1="100%" x2="100%" y2="0%">
-                                            <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
-                                            <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
-                                        </linearGradient>
-                                        <radialGradient id="grad3">
-                                            <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.6"/>
-                                            <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0"/>
-                                        </radialGradient>
-                                    </defs>
-                                </svg>
                             </div>
                         </div>
                     </div>
@@ -339,7 +386,16 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#hero" class="footer-logo">
-                        <i class="fas fa-tasks" aria-hidden="true"></i>
+                        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#footerGrad)"/>
+                            <path d="M9 16L14 21L23 11" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="footerGrad" x1="0" y1="0" x2="32" y2="32">
+                                    <stop offset="0%" stop-color="#6366f1"/>
+                                    <stop offset="100%" stop-color="#8b5cf6"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
                         <span>TaskFlow</span>
                     </a>
                     <p>Streamline your workflow with intelligent task management.</p>

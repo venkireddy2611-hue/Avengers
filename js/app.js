@@ -1,8 +1,3 @@
-/**
- * TaskFlow - Main Application
- * Version: 1.0.0
- * Description: Complete SaaS landing page functionality
- */
 
 'use strict';
 

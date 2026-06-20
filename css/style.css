@@ -424,9 +424,8 @@ button {
     transition: color var(--transition-base);
 }
 
-.nav-brand i {
-    color: var(--color-primary);
-    font-size: 1.5rem;
+.nav-brand svg {
+    flex-shrink: 0;
 }
 
 .nav-toggle {
@@ -660,8 +659,8 @@ button {
 .hero-image-wrapper {
     position: relative;
     width: 100%;
-    max-width: 480px;
-    aspect-ratio: 1;
+    max-width: 500px;
+    aspect-ratio: 5/4;
 }
 
 .hero-image-placeholder {
@@ -678,17 +677,22 @@ button {
     transition: background var(--transition-base), box-shadow var(--transition-base);
 }
 
-.hero-graphic {
-    width: 80%;
-    height: 80%;
-    animation: float 6s ease-in-out infinite;
+/* Hero Dashboard SVG */
+.hero-dashboard {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    transition: all var(--transition-base);
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(2deg); }
+.hero-dashboard rect,
+.hero-dashboard circle,
+.hero-dashboard polyline,
+.hero-dashboard text {
+    transition: all var(--transition-base);
 }
 
+/* Floating Cards */
 .floating-card {
     position: absolute;
     background: var(--color-bg-glass);
@@ -706,6 +710,7 @@ button {
     animation: floatCard 4s ease-in-out infinite;
     color: var(--color-text-primary);
     transition: background var(--transition-base), border-color var(--transition-base);
+    z-index: 2;
 }
 
 .floating-card i {
@@ -713,9 +718,9 @@ button {
     font-size: 1rem;
 }
 
-.card-1 { top: 10%; left: -10%; animation-delay: 0s; }
-.card-2 { bottom: 20%; right: -10%; animation-delay: 1.5s; }
-.card-3 { bottom: 10%; left: 5%; animation-delay: 0.75s; }
+.card-1 { top: 8%; left: -8%; animation-delay: 0s; }
+.card-2 { bottom: 15%; right: -8%; animation-delay: 1.5s; }
+.card-3 { bottom: 5%; left: 2%; animation-delay: 0.75s; }
 
 @keyframes floatCard {
     0%, 100% { transform: translateY(0px); }
@@ -809,7 +814,7 @@ button {
 }
 
 /* ============================================
-   PRICING
+   PRICING (same as before)
    ============================================ */
 .pricing {
     padding: var(--spacing-4xl) 0;
@@ -1026,7 +1031,7 @@ button {
 }
 
 /* ============================================
-   CONTACT
+   CONTACT (same as before)
    ============================================ */
 .contact {
     padding: var(--spacing-4xl) 0;
@@ -1146,7 +1151,7 @@ button {
 }
 
 /* ============================================
-   FOOTER
+   FOOTER (same as before)
    ============================================ */
 .footer {
     background: var(--color-bg-primary);
@@ -1179,8 +1184,8 @@ button {
     transition: color var(--transition-base);
 }
 
-.footer-logo i {
-    color: var(--color-primary);
+.footer-logo svg {
+    flex-shrink: 0;
 }
 
 .footer-social {
