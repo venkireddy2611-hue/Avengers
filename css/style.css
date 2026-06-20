@@ -160,10 +160,10 @@ a {
     transition: color var(--transition-fast);
 }
 
-img,
-svg {
+img {
     display: block;
     max-width: 100%;
+    height: auto;
 }
 
 ul,
@@ -337,10 +337,8 @@ button {
     transition: color var(--transition-base);
 }
 
-.nav-brand .brand-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.nav-brand img {
+    border-radius: var(--radius-sm);
 }
 
 .nav-toggle {
@@ -580,37 +578,11 @@ button {
     transition: background var(--transition-base), box-shadow var(--transition-base);
 }
 
-.hero-dashboard {
+.hero-dashboard-img {
     width: 100%;
     height: 100%;
-    padding: 12px;
+    object-fit: cover;
     transition: all var(--transition-base);
-}
-
-/* Dark Mode Dashboard Override */
-[data-theme="dark"] .hero-dashboard rect[fill="#ffffff"] {
-    fill: #1f2937;
-}
-
-[data-theme="dark"] .hero-dashboard rect[fill="#f9fafb"] {
-    fill: #1f2937;
-}
-
-[data-theme="dark"] .hero-dashboard rect[stroke="#e5e7eb"] {
-    stroke: #374151;
-}
-
-[data-theme="dark"] .hero-dashboard rect[fill="#ffffff"][stroke="#e5e7eb"] {
-    fill: #1f2937;
-    stroke: #374151;
-}
-
-[data-theme="dark"] .hero-dashboard line[stroke="#f3f4f6"] {
-    stroke: #2d3748;
-}
-
-[data-theme="dark"] .hero-dashboard text[fill="#6b7280"] {
-    fill: #9ca3af;
 }
 
 /* Floating Cards */
@@ -870,7 +842,7 @@ button {
     color: var(--color-error);
 }
 
-/* BLOG */
+/* BLOG WITH IMAGES */
 .blog {
     padding: var(--spacing-4xl) 0;
     background: var(--color-bg-primary);
@@ -927,6 +899,7 @@ button {
     border-radius: var(--radius-full);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    z-index: 2;
 }
 
 .blog-content {
@@ -1171,6 +1144,10 @@ button {
     font-weight: 800;
     color: var(--color-text-primary);
     transition: color var(--transition-base);
+}
+
+.footer-logo img {
+    border-radius: var(--radius-sm);
 }
 
 .footer-social {

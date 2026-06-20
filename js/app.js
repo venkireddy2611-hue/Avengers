@@ -68,7 +68,7 @@ const App = (() => {
                 description: 'Bank-grade encryption and security features to protect your sensitive business data.'
             }
         ],
-        // Blog images from Unsplash
+        // Blog images using img tags - high quality images
         blogImages: [
             'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=250&fit=crop&crop=center',
             'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=250&fit=crop&crop=center',
@@ -257,7 +257,7 @@ const App = (() => {
         }
     };
 
-    // Blog Module with Images
+    // Blog Module with <img> tags
     const Blog = {
         async loadPosts() {
             if (!DOM.blogGrid) return;
@@ -311,7 +311,7 @@ const App = (() => {
                                 loading="lazy"
                                 width="400"
                                 height="250"
-                                onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22><rect width=%22400%22 height=%22250%22 fill=%22%236366f1%22 opacity=%220.1%22/><text x=%22200%22 y=%22125%22 text-anchor=%22middle%22 font-family=%22Inter%22 font-size=%2220%22 fill=%22%23636f1%22>📸</text></svg>'"
+                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22%3E%3Crect width=%22400%22 height=%22250%22 fill=%22%236366f1%22 opacity=%220.1%22/%3E%3Ctext x=%22200%22 y=%22125%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2240%22 fill=%22%236366f1%22%3E📸%3C/text%3E%3C/svg%3E'"
                             />
                             <span class="blog-category">Productivity</span>
                         </div>
