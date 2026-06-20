@@ -30,6 +30,6 @@ TaskFlow is a modern, production-ready SaaS landing page built with vanilla HTML
 | **JavaScript ES6+** | Modules, Async/Await, Event Delegation, DOM Manipulation |
 | **Font Awesome** | Icon library for professional icons |
 | **Google Fonts** | Inter typography for clean, modern look |
-| **JSONPlaceholder** | Mock API for blog posts |
+
 
 
